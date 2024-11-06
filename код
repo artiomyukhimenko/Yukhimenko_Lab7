@@ -1,1 +1,28 @@
+#include <iostream>
+#include <Windows.h>
+using namespace std;
+
+int main() {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);                                                    
+    int* array = new int[6] {1, 3, 4, 5, 6, 42};                                                                        
+    for (int i = 0; i < 6; ++i) {
+        cout << "Елемент масиву [" << i << "]: " << array[i] << endl;
+    }
+ 
+    int indexToDelete = 1;
+    for (int i = indexToDelete; i < 5; ++i) { // Зсуваємо елементи вліво , видаляє елемент за індексом 1.
+        array[i] = array[i + 1];
+    }
+
+   
+    cout << "\nМасив після видалення елемента з індексом 1:\n";
+    for (int i = 0; i < 5; ++i) { // На 1 індекс масив менше.
+        cout << "Елемент масиву [" << i << "]: " << array[i] << endl;
+    }
+
+    delete[] array;
+
+    return 0;
+}
 
